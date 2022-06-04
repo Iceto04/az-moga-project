@@ -67,7 +67,7 @@ namespace Queens.ConsoleUI
 
         private static void PrintWinner()
         {
-            Console.WriteLine($"The winner is {userNumber}!");
+            Console.WriteLine($"The winner is player {userNumber}!");
         }
 
         private static bool InitBoard()
