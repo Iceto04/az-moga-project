@@ -13,10 +13,19 @@ namespace Queens.ConsoleUI
 
         private static char[,] board;
         private static int userNumber = 1;
+        private const int minBoardSize = 3;
+        private const int maxBoardSize = 100;
 
         public static void Main(string[] args)
         {
-            InitBoard();
+            while (!InitBoard())
+            {
+                var isBoardCorrect = InitBoard();
+                if (isBoardCorrect)
+                {
+                    break;
+                }
+            }
 
             while (true)
             {
@@ -59,19 +68,46 @@ namespace Queens.ConsoleUI
             Console.WriteLine($"The winner is {userNumber}!");
         }
 
-        private static void InitBoard()
+        private static bool InitBoard()
         {
-            Console.Write("N = ");
-            var n = int.Parse(Console.ReadLine());
-            Console.Write("M = ");
-            var m = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.Write("Rows = ");
+                int rows = int.Parse(Console.ReadLine());
+                Console.Write("Cols = ");
+                int cols = int.Parse(Console.ReadLine());
 
-            board = new char[n, m];
+                if (rows < 0 || cols < 0)
+                {
+                    Console.WriteLine("Board size must be a positive number.");
+                    return false;
+                }
+
+                if (rows < minBoardSize || rows > maxBoardSize
+                    || cols < minBoardSize || cols > maxBoardSize)
+                {
+                    Console.WriteLine("Board size must be with minimum size of (3x3) and maximum size of (100x100))");
+
+                    return false;
+                }
+
+                board = new char[rows, cols];
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Board size must be a number.");
+                return false;
+            }
+
+            return true;
         }
 
         private static void ResetGame()
         {
-            InitBoard();
+            while (!InitBoard())
+            {
+                InitBoard();
+            }
             ResetHashSets();
         }
 
@@ -83,7 +119,7 @@ namespace Queens.ConsoleUI
             attackedRightDiagonals = new HashSet<int>();
         }
 
-        private static void ChoosePosition(int userNumber, 
+        private static void ChoosePosition(int userNumber,
             out char userNumberAsChar, out int row, out int col)
         {
             Console.Write("Put queen on (0,0 pattern): ");
@@ -115,8 +151,8 @@ namespace Queens.ConsoleUI
 
         private static void PutQueens(char[,] board, int row, int col, char userNumber)
         {
-            if (row < 0 || row > board.GetLength(0) - 1 || 
-                row >= board.GetLength(0) || 
+            if (row < 0 || row > board.GetLength(0) - 1 ||
+                row >= board.GetLength(0) ||
                 col < 0 || col > board.GetLength(1) - 1 ||
                 col >= board.GetLength(1))
             {
@@ -184,7 +220,7 @@ namespace Queens.ConsoleUI
 
             // LeftDiagonal Down
             j = 1;
-            while (row + j < board.GetLength(0) && 
+            while (row + j < board.GetLength(0) &&
                 col + j < board.GetLength(1))
             {
                 board[row + j, col + j] = '*';
