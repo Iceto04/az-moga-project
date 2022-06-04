@@ -34,7 +34,7 @@ namespace Queens.ConsoleUI
                     PrintWinner();
 
                     Console.WriteLine($"Do you want to play again?");
-                    Console.WriteLine("Press Enter button to continie.");
+                    Console.WriteLine("Press Enter button to continue.");
                     var key = Console.ReadKey();
                     if (key.Key != ConsoleKey.Enter)
                     {
@@ -123,7 +123,7 @@ namespace Queens.ConsoleUI
 
         private static bool ChoosePosition(int userNumber)
         {
-            Console.Write("Put queen on (0,0 pattern): ");
+            Console.Write("Put queen on (0,0 (col, row) pattern): ");
             int row;
             int col;
             try
