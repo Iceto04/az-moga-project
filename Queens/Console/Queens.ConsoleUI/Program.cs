@@ -21,7 +21,7 @@ namespace Queens.ConsoleUI
 
                 while (true)
                 {
-                    Console.Write("Please enter number [0-9]: ");
+                    Console.Write("Please enter number [0-3]: ");
                     var line = Console.ReadLine();
                     if (line == "0")
                     {

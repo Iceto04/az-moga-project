@@ -5,9 +5,4 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Queens.Common\Queens.Common.csproj" />
-    <ProjectReference Include="..\..\Services\Queens.Services\Queens.Services.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -28,10 +28,12 @@ namespace Queens.ConsoleUI
         {
             Board board = new Board();
             var currentPlayer = this.FirstPlayer;
+            userNumber = 1;
 
             ResetHashSets();
             while (true)
             {
+
                 if (IsGameOver(board))
                 {
                     PrintWinner();
@@ -96,7 +98,7 @@ namespace Queens.ConsoleUI
 
         private static bool ChoosePositionAsPlayer(int userNumber, Board board)
         {
-            Console.Write("Put queen on (0,0 (col, row) pattern): ");
+            Console.Write("Put queen on (0,0 (row, col) pattern): ");
             int row;
             int col;
             try
@@ -110,7 +112,7 @@ namespace Queens.ConsoleUI
                 col = positions[1];
                 char userNumberAsChar = userNumber.ToString().ToCharArray()[0];
 
-                return PutQueens(board, col, row, userNumberAsChar);
+                return PutQueens(board, row, col, userNumberAsChar);
             }
             catch (Exception)
             {
