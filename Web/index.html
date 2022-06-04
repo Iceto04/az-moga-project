@@ -4,143 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Queens</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> -->
+    <title>Preferences</title>
+    <link rel="stylesheet" href="lobby.css">
 </head>
 <body>
     <div class="container_background">
-        <div class="scoreboard_container">
-            <span class="score_playerOne">0</span>
-            <span class="score_divider"> - </span>
-            <span class="score_playerTwo">0</span>
+        <span class="title">Board Size</span>
+        <div class="settings_board_size">
+            <div class="description">
+                <span class="rows">Rows</span>
+                <span class="columns">Columns</span>
+            </div>
+            <div class="y_controller">
+                <img id="arrow_up_y" class="arrow" src="content/arrowUp.svg"></img>
+                <div class="y_container">
+                    <span class="y">6</span>
+                </div>
+                <img id="arrow_down_y" class="arrow" src="content/arrowDown.svg"></img>
+            </div>
+            <div class="multiply">            
+                <span>x</span>
+            </div>
+            <div class="x_controller">
+                <img id="arrow_up_x" class="arrow" src="content/arrowUp.svg"></img>
+                <div class="x_container">
+                    <span class="x">6</span>
+                </div>
+                <img id="arrow_down_x" class="arrow" src="content/arrowDown.svg"></img>
+            </div>
         </div>
-        <div class="container_main">
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-            <div class="axis_y">
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-                <div class="axis_x"></div>
-            </div>
-
-            
-        </div>
+        <button class="continue_btn">
+            <span>CONTINUE</span>
+        </button>
     </div>
 </body>
 </html>
