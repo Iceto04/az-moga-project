@@ -5,18 +5,6 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console", "Console", "{EFC75F08-8A7F-4F94-9147-BF6A215762E0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{3C85D555-74D6-49F4-8727-475B965F6EE2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3C602274-69CB-4238-B874-76B63CE6F1E9}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{EF64B1B6-3247-427F-9504-372C9D789579}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{51F3570E-C461-4CBD-85AB-39D3248C6949}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queens.Common", "Queens.Common\Queens.Common.csproj", "{00888D22-2ACA-42A0-A9F1-CA10DB500FCC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queens.Services", "Services\Queens.Services\Queens.Services.csproj", "{9FAADC0C-676B-48AF-9B9E-D2807F3EFF85}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queens.ConsoleUI", "Console\Queens.ConsoleUI\Queens.ConsoleUI.csproj", "{91F92C1B-83B1-4E2B-A0D7-659A84DF0951}"
 EndProject
 Global
