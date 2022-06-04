@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+* {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 26px;
+}
+
+.container_background {
+  width: 100vw;
+  height: 100vh;
+  background-color: mediumaquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_background .title {
+  font-size: 36px;
+}
+
+.container_background .settings_board_size {
+  position: relative;
+  background: white;
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0 0 0;
+}
+
+.container_background .settings_board_size .description {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 30px;
+}
+
+.container_background .settings_board_size .description span {
+  width: 200px;
+  text-align: center;
+}
+
+.container_background .settings_board_size .y_controller {
+  font-size: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_background .settings_board_size .y_controller .arrow {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.container_background .settings_board_size .multiply span {
+  font-size: 24px;
+}
+
+.container_background .settings_board_size .x_controller {
+  font-size: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_background .settings_board_size .x_controller .arrow {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.container_background .continue_btn {
+  border: none;
+  width: 200px;
+  height: 60px;
+  color: white;
+  background-color: black;
+  border-radius: 100px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=lobby.css.map */
