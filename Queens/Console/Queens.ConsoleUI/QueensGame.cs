@@ -11,15 +11,23 @@ namespace Queens.ConsoleUI
         private static HashSet<int> attackedLeftDiagonals = new HashSet<int>();
         private static HashSet<int> attackedRightDiagonals = new HashSet<int>();
 
-        private static int userNumber = 1;
+        private static List<Tuple<int, int>> freeSpots;
+        private static Random random = new Random();
 
-        public QueensGame()
+        private static int userNumber = 1;
+        public QueensGame(string playerOne, string playerTwo)
         {
+            FirstPlayer = playerOne;
+            SecondPlayer = playerTwo;
         }
+
+        public string FirstPlayer { get; set; }
+        public string SecondPlayer { get; set; }
 
         public void Play()
         {
             Board board = new Board();
+            var currentPlayer = this.FirstPlayer;
 
             ResetHashSets();
             while (true)
@@ -30,7 +38,15 @@ namespace Queens.ConsoleUI
                     break;
                 }
 
-                var isInputValid = ChoosePosition(userNumber, board);
+                bool isInputValid;
+                if (currentPlayer == "Random")
+                {
+                    isInputValid = ChooseRandomPosition(userNumber, board);
+                }
+                else
+                {
+                    isInputValid = ChoosePositionAsPlayer(userNumber, board);
+                }
 
                 if (!isInputValid)
                 {
@@ -39,6 +55,15 @@ namespace Queens.ConsoleUI
 
                 if (!IsGameOver(board))
                 {
+                    if (currentPlayer == this.FirstPlayer)
+                    {
+                        currentPlayer = this.SecondPlayer;
+                    }
+                    else
+                    {
+                        currentPlayer = this.FirstPlayer;
+                    }
+
                     if (userNumber == 1)
                     {
                         userNumber++;
@@ -51,7 +76,25 @@ namespace Queens.ConsoleUI
             }
         }
 
-        private static bool ChoosePosition(int userNumber, Board board)
+        private bool ChooseRandomPosition(int userNumber, Board board)
+        {
+            freeSpots = board.GetAllFreeSpots();
+            char userNumberAsChar = userNumber.ToString().ToCharArray()[0];
+
+            return ChooseRandomSpot(userNumberAsChar, board);
+        }
+
+        private bool ChooseRandomSpot(char userNumberAsChar, Board board)
+        {
+            var rand = random.Next(0, freeSpots.Count);
+
+            var spotKeyValuePair = freeSpots.ElementAt(rand);
+
+            return PutQueens(board, spotKeyValuePair.Item1, 
+                spotKeyValuePair.Item2, userNumberAsChar);
+        }
+
+        private static bool ChoosePositionAsPlayer(int userNumber, Board board)
         {
             Console.Write("Put queen on (0,0 (col, row) pattern): ");
             int row;

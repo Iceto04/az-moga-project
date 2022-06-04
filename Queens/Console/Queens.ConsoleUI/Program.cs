@@ -6,6 +6,8 @@ namespace Queens.ConsoleUI
 {
     public class Program
     {
+        private const string player = "Player";
+        private const string random = "Random";
 
         public static void Main(string[] args)
         {
@@ -14,7 +16,7 @@ namespace Queens.ConsoleUI
                 Console.Clear();
                 Console.WriteLine("1. Player vs Player");
                 Console.WriteLine("2. Player vs Random");
-                Console.WriteLine("3. Random vs Player");
+                Console.WriteLine("3. (Simulate) Random vs Random");
                 Console.WriteLine("0. Exit");
 
                 while (true)
@@ -27,17 +29,17 @@ namespace Queens.ConsoleUI
                     }
                     if (line == "1")
                     {
-                        PlayGame();
+                        PlayGame(player, player);
                         break;
                     }
                     if (line == "2")
                     {
-                        PlayGame();
+                        PlayGame(player, random);
                         break;
                     }
                     if (line == "3")
                     {
-                        PlayGame();
+                        PlayGame(random, random);
                         break;
                     }
                 }
@@ -48,9 +50,9 @@ namespace Queens.ConsoleUI
             }
         }
 
-        private static void PlayGame()
+        private static void PlayGame(string playerOne, string playerTwo)
         {
-            var game = new QueensGame();
+            var game = new QueensGame(playerOne, playerTwo);
             game.Play();
         }
     }
