@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+* {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-size: 26px;
+}
+
+.container_background {
+  width: 100vw;
+  height: 100vh;
+  background-color: mediumaquamarine;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container_background .scoreboard_container {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  margin: 30px 0 0px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+}
+
+.container_background .scoreboard_container span {
+  margin: 0 5px 0 5px;
+}
+
+.container_background .scoreboard_container .score_playerOne {
+  color: dodgerblue;
+}
+
+.container_background .scoreboard_container .score_playerTwo {
+  color: red;
+}
+
+.container_background .container_main {
+  width: auto;
+  height: auto;
+  padding: 7px;
+  background-color: white;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px;
+}
+
+.container_background .container_main .axis_y {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container_background .container_main .axis_y {
+  width: 100%;
+  height: 50px;
+}
+
+.container_background .container_main .axis_x {
+  width: 50px;
+  height: 50px;
+  border: 0.5px #909090 solid;
+}
+/*# sourceMappingURL=style.css.map */
