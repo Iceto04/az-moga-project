@@ -44,10 +44,12 @@ namespace Queens.ConsoleUI
                     ResetGame();
                 }
 
-                char userNumberAsChar;
-                int row, col;
-                ChoosePosition(userNumber, out userNumberAsChar, out row, out col);
-                PutQueens(board, row, col, userNumberAsChar);
+                var isInputValid = ChoosePosition(userNumber);
+
+                if (!isInputValid)
+                {
+                    continue;
+                }
 
                 if (!IsGameOver(board))
                 {
@@ -119,18 +121,30 @@ namespace Queens.ConsoleUI
             attackedRightDiagonals = new HashSet<int>();
         }
 
-        private static void ChoosePosition(int userNumber,
-            out char userNumberAsChar, out int row, out int col)
+        private static bool ChoosePosition(int userNumber)
         {
             Console.Write("Put queen on (0,0 pattern): ");
-            var positions = Console.ReadLine()
+            int row;
+            int col;
+            try
+            {
+                var positions = Console.ReadLine()
                 .Split(",", StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
                 .ToArray();
 
-            userNumberAsChar = userNumber.ToString().ToCharArray()[0];
-            row = positions[0];
-            col = positions[1];
+                row = positions[0];
+                col = positions[1];
+                char userNumberAsChar = userNumber.ToString().ToCharArray()[0];
+
+                return PutQueens(board, col, row, userNumberAsChar);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Input in not in the correct format. Please use (0,0 pattern)");
+
+                return false;
+            }
         }
 
         private static bool IsGameOver(char[,] board)
@@ -149,7 +163,7 @@ namespace Queens.ConsoleUI
             return true;
         }
 
-        private static void PutQueens(char[,] board, int row, int col, char userNumber)
+        private static bool PutQueens(char[,] board, int row, int col, char userNumber)
         {
             if (row < 0 || row > board.GetLength(0) - 1 ||
                 row >= board.GetLength(0) ||
@@ -157,20 +171,25 @@ namespace Queens.ConsoleUI
                 col >= board.GetLength(1))
             {
                 Console.WriteLine("Invalid position.");
-                return;
+                return false;
+            }
+
+            if (board[row, col] == '1' || board[row, col] == '2')
+            {
+                Console.WriteLine("This position is occupied.");
+                return false;
             }
 
             if (IsAttacked(row, col))
             {
                 Console.WriteLine("This position is under attack.");
-                return;
+                return false;
             }
 
-            if (!IsAttacked(row, col))
-            {
-                Mark(board, row, col, userNumber);
-                PrintBoard(board);
-            }
+            Mark(board, row, col, userNumber);
+            PrintBoard(board);
+
+            return true;
         }
 
         private static void Mark(char[,] board, int row, int col, char userNumber)
@@ -212,7 +231,7 @@ namespace Queens.ConsoleUI
             int j;
             // LeftDiagonal Up
             j = 1;
-            while (row - j > 0 && col - j > 0)
+            while (row - j >= 0 && col - j >= 0)
             {
                 board[row - j, col - j] = '*';
                 j++;
